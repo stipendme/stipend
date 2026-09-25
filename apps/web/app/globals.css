@@ -1,0 +1,249 @@
+@import "tailwindcss";
+@import "@solana/wallet-adapter-react-ui/styles.css";
+
+/* Stipend design tokens. A bank statement done well: paper, ink, rules, one highlighter. */
+@theme {
+  --color-paper: #f5f7f4;
+  --color-paper-2: #eceff0;
+  --color-ink: #101815;
+  --color-ink-2: #5c6b63;
+  --color-rule: #c9d1cb;
+  --color-rule-2: #e2e7e3;
+  --color-credit: #1e7a56;
+  --color-debit: #b03a2e;
+  --font-sans: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+  --radius-ctl: 6px;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light dark;
+}
+.dark {
+  --color-paper: #0f1512;
+  --color-paper-2: #161d19;
+  --color-ink: #ecf1ec;
+  --color-ink-2: #8a9a90;
+  --color-rule: #2b3630;
+  --color-rule-2: #1f2824;
+  --color-credit: #4fcf95;
+  --color-debit: #f07a6e;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum" 1, "ss01" 1;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+a {
+  color: inherit;
+}
+.num {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.rule {
+  border-color: var(--color-rule);
+}
+.btn {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.5rem;
+  padding: 0 1rem;
+  border-radius: var(--radius-ctl);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1;
+  border: 1px solid var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  cursor: pointer;
+  transition: transform 80ms ease, opacity 120ms ease;
+}
+.btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn-quiet {
+  background: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-rule);
+}
+.btn-quiet:hover:not(:disabled) {
+  border-color: var(--color-ink);
+  opacity: 1;
+}
+.field {
+  width: 100%;
+  height: 2.75rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-ctl);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-size: 1.0625rem;
+  font-variant-numeric: tabular-nums;
+}
+.field:focus {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 1px;
+  border-color: var(--color-ink);
+}
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
+}
+.ledger-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) 5rem minmax(0, 1.6fr) 7rem 8rem;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--color-rule);
+}
+.ledger-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) 5rem minmax(0, 1.6fr) 7rem 8rem;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  color: var(--color-ink-2);
+  font-size: 0.8125rem;
+}
+@media (max-width: 720px) {
+  .ledger-head {
+    display: none;
+  }
+  .ledger-row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "name action"
+      "figure figure"
+      "meta tvl";
+    row-gap: 0.5rem;
+  }
+  .ledger-row > .c-name { grid-area: name; }
+  .ledger-row > .c-yield { grid-area: meta; text-align: left; }
+  .ledger-row > .c-yield::before { content: "Yield "; color: var(--color-ink-2); }
+  .ledger-row > .c-tvl::before { content: "TVL "; }
+  .ledger-row > .c-figure { grid-area: figure; }
+  .ledger-row > .c-tvl { grid-area: tvl; justify-self: end; }
+  .ledger-row > .c-action { grid-area: action; }
+}
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(10rem, 45%), 1fr));
+  gap: 0;
+  border-top: 1px solid var(--color-rule);
+}
+.stat {
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--color-rule);
+  padding-right: 1rem;
+}
+.stat .lbl {
+  color: var(--color-ink-2);
+  font-size: 0.8125rem;
+}
+.stat .val {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 0.125rem;
+}
+.tab {
+  height: 2.25rem;
+  padding: 0 0.25rem;
+  margin-right: 1.25rem;
+  border-bottom: 2px solid transparent;
+  color: var(--color-ink-2);
+  font-weight: 500;
+  cursor: pointer;
+  background: none;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  font-size: 0.9375rem;
+}
+.tab[aria-selected="true"] {
+  color: var(--color-ink);
+  border-bottom-color: var(--color-ink);
+}
+.wallet-adapter-button-trigger {
+  white-space: nowrap !important;
+  background: var(--color-ink) !important;
+  color: var(--color-paper) !important;
+  border-radius: var(--radius-ctl) !important;
+  height: 2.5rem !important;
+  font-family: var(--font-sans) !important;
+  font-size: 0.9375rem !important;
+  font-weight: 500 !important;
+  padding: 0 1rem !important;
+}
+.wallet-adapter-modal-wrapper {
+  background: var(--color-paper) !important;
+  color: var(--color-ink) !important;
+  border-radius: 10px !important;
+}
+.wallet-adapter-modal-title { color: var(--color-ink) !important; }
+.wallet-adapter-modal-list .wallet-adapter-button { color: var(--color-ink) !important; }
+.wallet-adapter-modal-list .wallet-adapter-button:hover { background: var(--color-paper-2) !important; }
+.wallet-adapter-dropdown-list { background: var(--color-paper-2) !important; }
+.wallet-adapter-dropdown-list-item { color: var(--color-ink) !important; }
+.wallet-adapter-modal-button-close { background: var(--color-paper-2) !important; }
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+@keyframes stamp {
+  0% { transform: scale(1.15) rotate(-3deg); opacity: 0; }
+  60% { transform: scale(0.98) rotate(-1deg); opacity: 1; }
+  100% { transform: scale(1) rotate(-1deg); opacity: 1; }
+}
+.stamp {
+  display: inline-block;
+  border: 2px solid var(--color-credit);
+  color: var(--color-credit);
+  padding: 0.125rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transform: rotate(-1deg);
+  animation: stamp 260ms ease-out both;
+}
+
+.data-table {
+  width: 100%;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.data-table th {
+  font-weight: 400;
+  color: var(--color-ink-2);
+  padding: 0.5rem 0;
+  text-align: left;
+  border-bottom: 1px solid var(--color-rule);
+}
+.data-table td {
+  padding: 0.625rem 0;
+  border-bottom: 1px solid var(--color-rule-2);
+}
+.data-table th.r, .data-table td.r { text-align: right; }
+.data-table th + th, .data-table td + td { padding-left: 1rem; }
+
+/* /docs: prose stays at a readable measure, figures take the full column so the diagrams stay legible. */
+.docs > :not(.docs-figure) { max-width: 76ch; }
+.docs-figure { max-width: none; }

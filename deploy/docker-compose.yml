@@ -1,0 +1,86 @@
+# Stipend staging. Secrets and host values live in deploy/.env on the server (see .env.example).
+#
+#   docker compose -p stipend-staging -f deploy/docker-compose.yml up -d --build web
+#   docker compose -p stipend-staging -f deploy/docker-compose.yml --profile ops up -d worker   # once keys/ exist
+#   docker compose -p stipend-staging -f deploy/docker-compose.yml run --rm ops admin status
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+      args:
+        NEXT_PUBLIC_RPC_URL: ${NEXT_PUBLIC_RPC_URL:-https://api.mainnet-beta.solana.com}
+        NEXT_PUBLIC_ADMIN_WALLETS: ${ADMIN_WALLETS:-}
+        NEXT_PUBLIC_NETWORK: ${NETWORK:-mainnet-beta}
+    image: stipend-staging
+    container_name: stipend-staging-web
+    restart: unless-stopped
+    environment:
+      RPC_URL: ${RPC_URL:?set RPC_URL in deploy/.env}
+      NEXT_PUBLIC_RPC_URL: ${NEXT_PUBLIC_RPC_URL:-https://api.mainnet-beta.solana.com}
+      ADMIN_WALLETS: ${ADMIN_WALLETS:-}
+      NEXT_PUBLIC_ADMIN_WALLETS: ${ADMIN_WALLETS:-}
+      NEXT_PUBLIC_NETWORK: ${NETWORK:-mainnet-beta}
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:-}
+      REGISTRY_PATH: ${REGISTRY_PATH:-/repo/config/registry.json}
+      STIPEND_REGISTRY: ${REGISTRY_PATH:-/repo/config/registry.json}
+      STIPEND_KEYS_DIR: ${KEYS_DIR:-/repo/keys}
+      STIPEND_FAUCET_KEY: ${FAUCET_KEY:-}
+      DB_PATH: ${DB_PATH:-/repo/data/stipend.db}
+      STIPEND_DB: ${DB_PATH:-/repo/data/stipend.db}
+    volumes:
+      - ../config:/repo/config
+      - ../data:/repo/data
+      - ../keys:/repo/keys:ro
+    labels:
+      caddy: ${STIPEND_HOST:?set STIPEND_HOST in deploy/.env}
+      caddy.reverse_proxy: '{{upstreams 3000}}'
+      caddy.tls: ${TLS_EMAIL:?set TLS_EMAIL in deploy/.env}
+    networks: [proxy]
+
+  # Epoch worker loop. Needs keys/ on the host and a live LST; off by default.
+  worker:
+    image: stipend-staging
+    container_name: stipend-staging-worker
+    restart: unless-stopped
+    profiles: [ops]
+    working_dir: /repo
+    command: ["pnpm", "--silent", "ops", "cron", "--interval-sec", "${CRON_INTERVAL_SEC:-300}"]
+    environment:
+      RPC_URL: ${RPC_URL:?set RPC_URL in deploy/.env}
+      STIPEND_REGISTRY: ${REGISTRY_PATH:-/repo/config/registry.json}
+      STIPEND_KEYS_DIR: ${KEYS_DIR:-/repo/keys}
+      STIPEND_MANAGER_KEY: ${KEYS_DIR:-/repo/keys}/manager.json
+      STIPEND_STAKER_KEY: ${KEYS_DIR:-/repo/keys}/staker.json
+      STIPEND_WORKER_KEY: ${KEYS_DIR:-/repo/keys}/worker.json
+      STIPEND_DB: ${DB_PATH:-/repo/data/stipend.db}
+    volumes:
+      - ../config:/repo/config
+      - ../data:/repo/data
+      - ../keys:/repo/keys:ro
+    networks: [proxy]
+
+  # One-shot ops commands: docker compose ... run --rm ops admin status
+  ops:
+    image: stipend-staging
+    profiles: [ops]
+    working_dir: /repo
+    entrypoint: ["pnpm", "--silent", "ops"]
+    environment:
+      RPC_URL: ${RPC_URL:?set RPC_URL in deploy/.env}
+      STIPEND_REGISTRY: ${REGISTRY_PATH:-/repo/config/registry.json}
+      STIPEND_KEYS_DIR: ${KEYS_DIR:-/repo/keys}
+      STIPEND_MANAGER_KEY: ${KEYS_DIR:-/repo/keys}/manager.json
+      STIPEND_STAKER_KEY: ${KEYS_DIR:-/repo/keys}/staker.json
+      STIPEND_WORKER_KEY: ${KEYS_DIR:-/repo/keys}/worker.json
+      STIPEND_DB: ${DB_PATH:-/repo/data/stipend.db}
+    volumes:
+      - ../config:/repo/config
+      - ../data:/repo/data
+      - ../keys:/repo/keys:ro
+    networks: [proxy]
+
+networks:
+  # Caddy's ingress network (caddy-docker-proxy, CADDY_INGRESS_NETWORKS=proxy). Owned by the server.
+  proxy:
+    external: true

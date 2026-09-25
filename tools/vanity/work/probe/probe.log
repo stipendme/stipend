@@ -1,0 +1,220 @@
+using 24 cpus, 1 gpus (cpu backend: scalar)
+targets (1 of each):
+building comb table… ready (0s)
+[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA —
+[K    nvda  0/1 | 8.317373e-8 | expected 12,023,026 | ETA —
+[K    ...stip  0/1 | 7.069326e-7 | expected 1,414,562 | ETA —
+[K    googL  0/1 | 3.585075e-10 | expected 2,789,342,154 | ETA —
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA —
+[K    jto  0/1 | 1.206019e-6 | expected 829,174 | ETA —
+[K0 attempts | 0 attempts/sec | elapsed: 0s[6A[Jmatch: jtotkgrnuvwe2pRJEwv8gdMTLaufg1JdkBiuJoiQgzG
+pubkey: jtotkgrnuvwe2pRJEwv8gdMTLaufg1JdkBiuJoiQgzG
+keypair generated at: ./jtotkgrnuvwe2pRJEwv8gdMTLaufg1JdkBiuJoiQgzG.json
+[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA —
+[K    nvda  0/1 | 8.317373e-8 | expected 12,023,026 | ETA —
+[K    ...stip  0/1 | 7.069326e-7 | expected 1,414,562 | ETA —
+[K    googL  0/1 | 3.585075e-10 | expected 2,789,342,154 | ETA —
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA —
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K0 attempts | 0 attempts/sec | elapsed: 0s[6A[Jmatch: F5pjh8VQ6bTuM6paXLu7yNvjrdQfgrRfsZ42unpostiP
+pubkey: F5pjh8VQ6bTuM6paXLu7yNvjrdQfgrRfsZ42unpostiP
+keypair generated at: ./F5pjh8VQ6bTuM6paXLu7yNvjrdQfgrRfsZ42unpostiP.json
+[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 307d 8h
+[K    nvda  0/1 | 8.317373e-8 | expected 12,023,026 | ETA 19s
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  0/1 | 3.585075e-10 | expected 2,789,342,154 | ETA 1h 12m
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 4h 23m
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K86,016 attempts | 640,415 attempts/sec | elapsed: 0s[6A[Jgpu 0 match: GoogLdYF673A4PN2mMAWRptQtToiRpojy7MQAaPzBCJu in 0.217s
+pubkey: GoogLdYF673A4PN2mMAWRptQtToiRpojy7MQAaPzBCJu
+keypair generated at: ./GoogLdYF673A4PN2mMAWRptQtToiRpojy7MQAaPzBCJu.json
+[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 7h
+[K    nvda  0/1 | 8.317373e-8 | expected 12,023,026 | ETA 0s
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 58s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K31,708,670 attempts | 85,290,288 attempts/sec | elapsed: 0s[6A[Jgpu 0 match: NVDA68suyax6796UFVPW3rgFG5Xz3kS97Xmb9YC7GQt in 0.121s
+pubkey: NVDA68suyax6796UFVPW3rgFG5Xz3kS97Xmb9YC7GQt
+keypair generated at: ./NVDA68suyax6796UFVPW3rgFG5Xz3kS97Xmb9YC7GQt.json
+[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 7h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 58s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K42,292,216 attempts | 85,619,662 attempts/sec | elapsed: 0s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 4d 14h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 3m 57s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K42,664,952 attempts | 42,597,018 attempts/sec | elapsed: 1s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 9d 1h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 7m 46s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K43,426,808 attempts | 21,693,903 attempts/sec | elapsed: 2s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 7h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 59s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K253,928,440 attempts | 84,586,133 attempts/sec | elapsed: 3s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 3d 2h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 2m 38s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K254,673,912 attempts | 63,632,704 attempts/sec | elapsed: 4s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 2h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 48s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K465,167,352 attempts | 92,986,607 attempts/sec | elapsed: 5s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 12h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 2m 10s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K465,941,496 attempts | 77,620,926 attempts/sec | elapsed: 6s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 0h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 44s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K676,393,976 attempts | 96,585,769 attempts/sec | elapsed: 7s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 7h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 59s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K677,139,448 attempts | 84,607,607 attempts/sec | elapsed: 8s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 1d 23h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 41s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K894,292,984 attempts | 99,304,323 attempts/sec | elapsed: 9s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 4h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 53s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K895,054,840 attempts | 89,453,247 attempts/sec | elapsed: 10s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 1d 22h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 40s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K1,109,980,152 attempts | 100,819,479 attempts/sec | elapsed: 11s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 3h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 49s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K1,110,725,624 attempts | 92,485,292 attempts/sec | elapsed: 12s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 1d 22h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 39s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K1,321,206,776 attempts | 101,553,799 attempts/sec | elapsed: 13s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 2h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 47s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K1,321,976,824 attempts | 94,335,368 attempts/sec | elapsed: 14s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 5h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 54s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K1,322,771,448 attempts | 88,103,555 attempts/sec | elapsed: 15s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 1h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 45s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K1,533,301,752 attempts | 95,747,148 attempts/sec | elapsed: 16s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 4h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 52s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K1,534,108,664 attempts | 90,165,705 attempts/sec | elapsed: 17s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 0h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 44s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K1,744,630,776 attempts | 96,845,501 attempts/sec | elapsed: 18s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 3h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 50s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K1,745,433,592 attempts | 91,793,104 attempts/sec | elapsed: 19s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 0h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 43s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K1,948,931,064 attempts | 97,373,078 attempts/sec | elapsed: 20s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 2h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 48s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K1,949,733,880 attempts | 92,776,976 attempts/sec | elapsed: 21s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 0h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 43s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K2,160,260,088 attempts | 98,124,714 attempts/sec | elapsed: 22s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 2h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 47s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K2,161,050,616 attempts | 93,894,904 attempts/sec | elapsed: 23s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 1d 23h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 42s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K2,371,621,880 attempts | 98,752,496 attempts/sec | elapsed: 24s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 1h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 46s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K2,372,424,696 attempts | 94,836,034 attempts/sec | elapsed: 25s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 1d 23h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 41s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K2,587,882,488 attempts | 99,471,405 attempts/sec | elapsed: 26s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 1h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 45s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K2,588,693,496 attempts | 95,818,651 attempts/sec | elapsed: 27s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 1d 23h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 41s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K2,803,753,976 attempts | 100,073,923 attempts/sec | elapsed: 28s[6A[K    nvda...stip  0/1 | 5.879822e-14 | expected 17,007,316,451,719 | ETA 2d 0h
+[K    nvda  1/1 | 8.317373e-8 | expected 12,023,026 | ETA capped
+[K    ...stip  1/1 | 7.069326e-7 | expected 1,414,562 | ETA capped
+[K    googL  1/1 | 3.585075e-10 | expected 2,789,342,154 | ETA capped
+[K    render  0/1 | 9.889861e-11 | expected 10,111,365,310 | ETA 1m 44s
+[K    jto  1/1 | 1.206019e-6 | expected 829,174 | ETA capped
+[K2,804,544,504 attempts | 96,651,634 attempts/sec | elapsed: 29s

@@ -1,0 +1,13 @@
+{
+  "name": "@solana/rewards",
+  "version": "0.0.1-vendored",
+  "description": "Vendored Codama client for the Solana Foundation rewards program (REWArDioXgQJ2fZKkfu9LCLjQfRwYWVVfsvcsR5hoXi), MIT, from solana-foundation/rewards@4aa0ee5",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "scripts": { "build": "tsc -p tsconfig.json" },
+  "dependencies": { "@solana/kit": "^6.10.0", "@solana/program-client-core": "^6.10.0" },
+  "devDependencies": { "typescript": "^5.6.0" }
+}

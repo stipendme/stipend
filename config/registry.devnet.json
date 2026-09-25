@@ -1,0 +1,324 @@
+{
+  "network": "devnet",
+  "brand": {
+    "name": "Stipend",
+    "domain": "stipend.my",
+    "tagline": "Stake SOL. Get paid in stocks."
+  },
+  "validator": {
+    "voteAccount": "vgcDar2pryHvMgPkKaZfh8pQy4BJxv7SpwUG7zinWjG",
+    "name": "devnet validator vgcDar",
+    "yieldApi": "https://solanacompass.com/api/tools/staking-calculator/profile?vote=EARNynHRWg6GfyJCmrrizcZxARB3HVzcaasvNa8kBS72"
+  },
+  "programs": {
+    "stakePool": "SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy",
+    "rewards": "REWArDioXgQJ2fZKkfu9LCLjQfRwYWVVfsvcsR5hoXi"
+  },
+  "fees": {
+    "platformFeeBps": 1500,
+    "epochFee": {
+      "numerator": 1,
+      "denominator": 1
+    },
+    "solWithdrawalFee": {
+      "numerator": 1,
+      "denominator": 1000
+    },
+    "stakeWithdrawalFee": {
+      "numerator": 1,
+      "denominator": 1000
+    },
+    "solDepositFee": {
+      "numerator": 0,
+      "denominator": 1
+    },
+    "stakeDepositFee": {
+      "numerator": 0,
+      "denominator": 1
+    }
+  },
+  "reserve": {
+    "targetBps": 1000,
+    "minSol": 1
+  },
+  "distribution": {
+    "clawbackHours": 12,
+    "minSwapLamports": 100000,
+    "minPayoutUsd": 0.001,
+    "payAtaRent": true
+  },
+  "snapshot": {
+    "excludeOwners": []
+  },
+  "treasury": "72FLAqr5tPkECYFR9QUYBPVfe9m1uFUWqXh7rgsRKL86",
+  "launch": {
+    "enabled": true,
+    "creatorFeeBps": 5000,
+    "seedLamports": 1010000000,
+    "maxValidators": 4,
+    "allowedLists": [
+      "stocks",
+      "metals",
+      "majors"
+    ],
+    "minJupLiquidityUsd": 250000
+  },
+  "rent": {
+    "platformFundsFirstAccount": true,
+    "rentBudgetBpsOfFee": 5000
+  },
+  "lsts": [
+    {
+      "symbol": "anthSOL",
+      "name": "Stipend Anthropic SOL",
+      "blurb": "Hold anthSOL, get paid ANTHROPIC every epoch.",
+      "asset": {
+        "symbol": "ANTHROPIC",
+        "name": "Anthropic PreStocks",
+        "mint": "AfPZi4JSg4vgkrTLM5EQk5g9iUzx17TZCpjfuddcRxoS",
+        "decimals": 9,
+        "tokenProgram": "token-2022",
+        "category": "prestock",
+        "priceMint": "Pren1FvFX6J3E4kXhJuCiAD5aDmGEb7qJRncwA8Lkhw",
+        "logo": "https://www.prestocks.com/logos/anthropic.png?cachebust=1"
+      },
+      "stakePool": "Fi112towMyyshpqgbxQ8ogpDg6V6nMfm4znchxcbTkyX",
+      "mint": "HrH5tnNDZM6dqgkHFy4X99yEQSK69mGvQTo5Ez6yKacc",
+      "validatorList": "BrwiMWeb9bLWzMb6TCXtoNgddxRj7S18XDaUEDHLBPr1",
+      "reserve": "AVNVQPUwQ9uva2zSRXsotaD4am6VuEutCSxLm3sJHwF4",
+      "managerFeeAccount": "GiLcbRvWmuQNMEQFUtDzzWfznQ866tP2rLPwg6TumB54",
+      "createdEpoch": 1167,
+      "status": "live",
+      "delivery": "direct",
+      "mintKeypair": "keys/devnet/anthsol-mint.json",
+      "launchTx": [
+        "resumed",
+        "resumed",
+        "resumed",
+        "resumed"
+      ],
+      "launchedAt": 1790366736,
+      "creator": "DEHNXxDQG5h7mgVmrTZ4uaNbQnMxZhe6TCEMHUTvfedT",
+      "creatorFeeBps": 5000
+    },
+    {
+      "symbol": "openaiSOL",
+      "name": "Stipend OpenAI SOL",
+      "blurb": "Hold openaiSOL, get paid OPENAI every epoch.",
+      "asset": {
+        "symbol": "OPENAI",
+        "name": "OpenAI PreStocks",
+        "mint": "5GR8KwUrrpogNGZijyBfQxQdj92r4czKKHjcJsYvDSnu",
+        "decimals": 9,
+        "tokenProgram": "token-2022",
+        "category": "prestock",
+        "priceMint": "PreweJYECqtQwBtpxHL171nL2K6umo692gTm7Q3rpgF",
+        "logo": "https://www.prestocks.com/logos/openai.png?cachebust=1"
+      },
+      "stakePool": "5c8bGc7LrgMFQyaeCqRgYSy5xMYJNeikYdyP3nVfsNTj",
+      "mint": "DPCEUbw5cnawdspd5pwZ76166KzFFGJrEKAYe17tNiH9",
+      "validatorList": "GK5HfhuekH4nUMUbTCgNHVeYppSNREGHrGnfJ7fxqg9V",
+      "reserve": "EV9Lnj915pdFLq2AU4xFt5sm4UAKbJF7afocJqmcZx8z",
+      "managerFeeAccount": "GTgU8MXW1QsNV16uVR4vbGJJapRokj1fKQQaKQZ1YLsZ",
+      "createdEpoch": 1167,
+      "status": "live",
+      "delivery": "direct",
+      "mintKeypair": "keys/devnet/openaisol-mint.json",
+      "launchTx": [
+        "1TQeMMXvMNrkxtDjpRZZtAuqFxVqiLXiC3BEsQDBvpDJjF8dKZRe2yk6iGEZ7WFEcVPUNuHRQiAXsorcBYpwHP5",
+        "2WKqb13t7WyYp7oEso6CfzUE8zZwYCT5L1oScTe7pqUZTvRsrM4PiLLotAsbUM1JKrJJz4gZxNZ4ZWnZr1KAmLPr",
+        "3TcA4i9A7BoGQ6ukc6oUSETryyYcZixUARpiHjYMvE2rc1vPpzYueL5DFMFqvTp9njjQRe94BNCf7qLXpm47TeEP",
+        "resumed"
+      ],
+      "launchedAt": 1790366742,
+      "creator": "DEHNXxDQG5h7mgVmrTZ4uaNbQnMxZhe6TCEMHUTvfedT",
+      "creatorFeeBps": 5000
+    },
+    {
+      "symbol": "nvdaSOL",
+      "name": "Stipend NVIDIA SOL",
+      "blurb": "Hold nvdaSOL, get paid NVDAx every epoch.",
+      "asset": {
+        "symbol": "NVDAx",
+        "name": "NVIDIA xStock",
+        "mint": "CxZ5jn8KDfMyr9aWR5GczNGmZhedYYCVhbGjfMxcxard",
+        "decimals": 8,
+        "tokenProgram": "token-2022",
+        "category": "stock",
+        "priceMint": "Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh",
+        "logo": "/tokens/assets/NVDAx.png"
+      },
+      "stakePool": "9J9r8fvwsj4PQkzwxtf2xdzfRAkWqcm1fPv2DKc2EXzx",
+      "mint": "Eqnc7PGvH8f2AxZpyY1fgJ7tEWeEUkm6Xx4n59MGUsWx",
+      "validatorList": "3DEE7Zrxbje4xWgMG8VDh7mX2binkBqa3sRyfyiGVACC",
+      "reserve": "2jSMUChE9UChxZmrMUSJUQHqb6KXJ4txRcLZVw6z78ZS",
+      "managerFeeAccount": "2egX3Mixj4s62NkUTtPQS3x9d5Q3Leuw2xi5ZCKcrExj",
+      "createdEpoch": 1157,
+      "status": "live",
+      "delivery": "direct",
+      "mintKeypair": "keys/devnet/nvdasol-mint.json",
+      "launchTx": [
+        "resumed",
+        "resumed",
+        "resumed",
+        "resumed"
+      ],
+      "launchedAt": 1789655743,
+      "creator": "DEHNXxDQG5h7mgVmrTZ4uaNbQnMxZhe6TCEMHUTvfedT",
+      "creatorFeeBps": 5000
+    },
+    {
+      "symbol": "aaplSOL",
+      "name": "Stipend Apple SOL",
+      "blurb": "Hold aaplSOL, get paid AAPLx every epoch.",
+      "asset": {
+        "symbol": "AAPLx",
+        "name": "Apple xStock",
+        "mint": "BN13oGXssc248HqLGkAgQ1VrFPRqAeKv1X1QnCEtRjf9",
+        "decimals": 8,
+        "tokenProgram": "token-2022",
+        "category": "stock",
+        "priceMint": "XsbEhLAtcf6HdfpFZ5xEMdqW8nfAvcsP5bdudRLJzJp",
+        "logo": "/tokens/assets/AAPLx.png"
+      },
+      "stakePool": "6W6QKDifbWwz27AMky2uBZQXdBC96T7EDUrQmwo9WMUC",
+      "mint": "9QHzvqR9eLYTxe6K8Av7nSQaAPojxGkVYo3t2YpXb4so",
+      "validatorList": "7xZry1FErcT4qdcfBECwKnkL6sGewqFFKgzN6rApcFZ9",
+      "reserve": "GfKGU2N1T4XQJKA4bxU62HxUBALJGMPbvoGPvbR9q2P2",
+      "managerFeeAccount": "GkTfzxeSzgWbbTCEQkarQGtgY3bQTp3F9Ru33Zv4GVFw",
+      "createdEpoch": 1157,
+      "status": "live",
+      "delivery": "direct",
+      "mintKeypair": "keys/devnet/aaplsol-mint.json",
+      "launchTx": [
+        "2GBV75Pda4it3Ka2frxwRyn11Qk85FLdfmrNPGeouDQmMWUq778XBpRfT8fLmbaMxzc335v788VUq8RSo6bPDU31",
+        "3cyJMJnChGqmUfMVbd7Uxi4dWFfLXzJJ4nKTMcGZYzCQdCZPJhUrzUJgsbRXqnc4SbYc8Rc7sTurw8wPertDyJoK",
+        "24uZ8N8YvdkM2emaE4959vswmJEDhF78CaiEpfGgKd8nrHaFQ2E3MzSNEUbyhv2mxcAZ75hUqhEiMrpuEEUzbZJs",
+        "resumed"
+      ],
+      "launchedAt": 1789655750,
+      "creator": "DEHNXxDQG5h7mgVmrTZ4uaNbQnMxZhe6TCEMHUTvfedT",
+      "creatorFeeBps": 5000
+    },
+    {
+      "symbol": "tslaSOL",
+      "name": "Stipend Tesla SOL",
+      "blurb": "Hold tslaSOL, get paid TSLAx every epoch.",
+      "asset": {
+        "symbol": "TSLAx",
+        "name": "Tesla xStock",
+        "mint": "J15spWoPV8yyTc4X4DZMgZhCMJVoJdcysrkLpbePG9CY",
+        "decimals": 8,
+        "tokenProgram": "token-2022",
+        "category": "stock",
+        "priceMint": "XsDoVfqeBukxuZHWhdvWHBhgnNdZbqqhpqq4vrgN9mv",
+        "logo": "/tokens/assets/TSLAx.png"
+      },
+      "stakePool": "",
+      "mint": "",
+      "validatorList": "",
+      "reserve": "",
+      "managerFeeAccount": "",
+      "createdEpoch": 0,
+      "status": "draft",
+      "delivery": "direct"
+    },
+    {
+      "symbol": "spySOL",
+      "name": "Stipend SP500 SOL",
+      "blurb": "Hold spySOL, get paid SPYx every epoch.",
+      "asset": {
+        "symbol": "SPYx",
+        "name": "SP500 xStock",
+        "mint": "26ZC6BS9CQLrKiJekrzeifx5TRbD2WVjsv6vohofToVv",
+        "decimals": 8,
+        "tokenProgram": "token-2022",
+        "category": "etf",
+        "priceMint": "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W",
+        "logo": "/tokens/assets/SPYx.png"
+      },
+      "stakePool": "",
+      "mint": "",
+      "validatorList": "",
+      "reserve": "",
+      "managerFeeAccount": "",
+      "createdEpoch": 0,
+      "status": "draft",
+      "delivery": "direct"
+    },
+    {
+      "symbol": "goldSOL",
+      "name": "Stipend Gold SOL",
+      "blurb": "Hold goldSOL, get paid GLDx every epoch.",
+      "asset": {
+        "symbol": "GLDx",
+        "name": "Gold xStock",
+        "mint": "6itKXfHL4CyoKCTjKZggbFibZd2dUunN3zM2KRcQrdKE",
+        "decimals": 8,
+        "tokenProgram": "token-2022",
+        "category": "metal",
+        "priceMint": "Xsv9hRk1z5ystj9MhnA7Lq4vjSsLwzL2nxrwmwtD3re",
+        "logo": "/tokens/assets/GLDx.png"
+      },
+      "stakePool": "",
+      "mint": "",
+      "validatorList": "",
+      "reserve": "",
+      "managerFeeAccount": "",
+      "createdEpoch": 0,
+      "status": "draft",
+      "delivery": "direct"
+    },
+    {
+      "symbol": "btcSOL",
+      "name": "Stipend Coinbase Wrapped BTC SOL",
+      "blurb": "Hold btcSOL, get paid cbBTC every epoch.",
+      "asset": {
+        "symbol": "cbBTC",
+        "name": "Coinbase Wrapped BTC",
+        "mint": "8toT4LMn3WG4UVxyakCtXnnxeSoZXHCqCx7eBCMTUkfu",
+        "decimals": 8,
+        "tokenProgram": "token-2022",
+        "category": "crypto",
+        "priceMint": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+        "logo": "/tokens/assets/cbBTC.png"
+      },
+      "stakePool": "",
+      "mint": "",
+      "validatorList": "",
+      "reserve": "",
+      "managerFeeAccount": "",
+      "createdEpoch": 0,
+      "status": "draft",
+      "delivery": "direct"
+    },
+    {
+      "symbol": "usdcSOL",
+      "name": "Stipend USD Coin SOL",
+      "blurb": "Hold usdcSOL, get paid USDC every epoch.",
+      "asset": {
+        "symbol": "USDC",
+        "name": "USD Coin",
+        "mint": "366Tw5x4xpYfYt9XkXY6eSLchNuspdUsdMfdUQefqmMq",
+        "decimals": 6,
+        "tokenProgram": "token-2022",
+        "category": "stable",
+        "priceMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "logo": "/tokens/assets/USDC.png"
+      },
+      "stakePool": "",
+      "mint": "",
+      "validatorList": "",
+      "reserve": "",
+      "managerFeeAccount": "",
+      "createdEpoch": 0,
+      "status": "draft",
+      "delivery": "direct"
+    }
+  ],
+  "demo": {
+    "enabled": true,
+    "intervalMinutes": 60,
+    "apyPct": 5
+  }
+}

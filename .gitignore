@@ -1,0 +1,22 @@
+node_modules
+dist
+.next
+*.db
+*.db-wal
+*.db-shm
+.env
+.env.local
+keys/*.json
+!keys/README.md
+data/
+keys/vanity/
+tools/vanity/upstream/
+.tmp-web
+*.tsbuildinfo
+keys/devnet/*.json
+private/
+deploy/.env.local
+
+# demo video (hosted, not versioned)
+apps/web/public/demo.mp4
+brag-output/

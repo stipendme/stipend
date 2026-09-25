@@ -1,0 +1,11 @@
+**/node_modules
+**/.next
+**/dist
+.git
+keys
+data
+deploy/.env
+docs/screenshots
+**/*.log
+tools/vanity/upstream
+tools/vanity/work

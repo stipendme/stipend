@@ -1,0 +1,40 @@
+{
+  "name": "@stipend/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "marks": "node scripts/gen-marks.mjs"
+  },
+  "dependencies": {
+    "@solana/spl-stake-pool": "^1.1.8",
+    "@solana/spl-token": "^0.4.13",
+    "@solana/wallet-adapter-base": "^0.9.27",
+    "@solana/wallet-adapter-react": "^0.15.40",
+    "@solana/wallet-adapter-react-ui": "^0.9.40",
+    "@solana/web3.js": "^1.98.4",
+    "@stipend/core": "workspace:*",
+    "@tanstack/react-query": "^5.102.8",
+    "better-sqlite3": "^12.2.0",
+    "bn.js": "^5.2.2",
+    "bs58": "^6.0.0",
+    "next": "^15.5.25",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tweetnacl": "^1.0.3",
+    "sharp": "^0.34"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/bn.js": "^5.2.0",
+    "@types/node": "^22.19.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.0"
+  }
+}

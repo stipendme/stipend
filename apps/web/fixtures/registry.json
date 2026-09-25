@@ -1,0 +1,140 @@
+{
+  "network": "mainnet-beta",
+  "brand": {
+    "name": "Stipend",
+    "domain": "stipend.my",
+    "tagline": "Stake SOL. Get paid in stocks."
+  },
+  "validator": {
+    "voteAccount": "EARNynHRWg6GfyJCmrrizcZxARB3HVzcaasvNa8kBS72",
+    "name": "Solana Compass",
+    "yieldApi": "https://solanacompass.com/api/tools/staking-calculator/profile?vote=EARNynHRWg6GfyJCmrrizcZxARB3HVzcaasvNa8kBS72"
+  },
+  "programs": {
+    "stakePool": "SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy",
+    "rewards": "REWArDioXgQJ2fZKkfu9LCLjQfRwYWVVfsvcsR5hoXi"
+  },
+  "fees": {
+    "platformFeeBps": 1000,
+    "epochFee": {
+      "numerator": 1,
+      "denominator": 1
+    },
+    "solWithdrawalFee": {
+      "numerator": 1,
+      "denominator": 1000
+    },
+    "stakeWithdrawalFee": {
+      "numerator": 1,
+      "denominator": 1000
+    },
+    "solDepositFee": {
+      "numerator": 0,
+      "denominator": 1
+    },
+    "stakeDepositFee": {
+      "numerator": 0,
+      "denominator": 1
+    }
+  },
+  "reserve": {
+    "targetBps": 300,
+    "minSol": 5
+  },
+  "distribution": {
+    "clawbackHours": 12,
+    "minSwapLamports": 50000000,
+    "minPayoutUsd": 0.05,
+    "payAtaRent": true
+  },
+  "snapshot": {
+    "excludeOwners": []
+  },
+  "treasury": "",
+  "lsts": [
+    {
+      "symbol": "nvdaSOL",
+      "name": "Stipend NVIDIA SOL",
+      "blurb": "Hold nvdaSOL, get paid NVIDIA every epoch.",
+      "asset": {
+        "symbol": "NVDAx",
+        "name": "NVIDIA xStock",
+        "mint": "Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh",
+        "decimals": 8,
+        "tokenProgram": "token-2022",
+        "category": "stock"
+      },
+      "stakePool": "Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb",
+      "mint": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+      "validatorList": "3R3nGZpQs2aZo5FDQvd2xNQ37DFCwqpp3YCnEGaSMXCq",
+      "reserve": "BgKUXdS29YcHCFrPm5M8oLHiTzZaMDjsebggjoaQ6KFL",
+      "managerFeeAccount": "feeeFLLsam6xZJFc6UQFrHqkvVt4jfmVvi2BRLkUZ4i",
+      "createdEpoch": 1020,
+      "status": "live",
+      "delivery": "direct"
+    },
+    {
+      "symbol": "aaplSOL",
+      "name": "Stipend Apple SOL",
+      "blurb": "Hold aaplSOL, get paid Apple every epoch.",
+      "asset": {
+        "symbol": "AAPLx",
+        "name": "Apple xStock",
+        "mint": "XsbEhLAtcf6HdfpFZ5xEMdqW8nfAvcsP5bdudRLJzJp",
+        "decimals": 8,
+        "tokenProgram": "token-2022",
+        "category": "stock"
+      },
+      "stakePool": "",
+      "mint": "",
+      "validatorList": "",
+      "reserve": "",
+      "managerFeeAccount": "",
+      "createdEpoch": 0,
+      "status": "draft",
+      "delivery": "direct"
+    },
+    {
+      "symbol": "goldSOL",
+      "name": "Stipend Gold SOL",
+      "blurb": "Hold goldSOL, get paid gold every epoch.",
+      "asset": {
+        "symbol": "XAUt",
+        "name": "Tether Gold",
+        "mint": "XAUt1VaTZ6f8G3PKTBQnwZgbKhTxaCbL6XdcH6jVq1S",
+        "decimals": 6,
+        "tokenProgram": "spl-token",
+        "category": "metal"
+      },
+      "stakePool": "",
+      "mint": "",
+      "validatorList": "",
+      "reserve": "",
+      "managerFeeAccount": "",
+      "createdEpoch": 0,
+      "status": "draft",
+      "delivery": "merkle"
+    },
+    {
+      "symbol": "spySOL",
+      "name": "Stipend S&P 500 SOL",
+      "blurb": "Hold spySOL, get paid the index every epoch.",
+      "asset": {
+        "symbol": "SPYx",
+        "name": "SPDR S&P 500 xStock",
+        "mint": "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W",
+        "decimals": 8,
+        "tokenProgram": "token-2022",
+        "category": "etf"
+      },
+      "stakePool": "",
+      "mint": "",
+      "validatorList": "",
+      "reserve": "",
+      "managerFeeAccount": "",
+      "createdEpoch": 0,
+      "status": "draft",
+      "delivery": "direct"
+    }
+  ]
+}
