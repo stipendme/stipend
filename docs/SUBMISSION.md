@@ -96,4 +96,4 @@ Next.js 15 and React 19, Solana wallet adapter, `@solana/web3.js` and `@solana/k
 ## Links
 
 - Live demo on devnet: https://stipend.my (switch Phantom to Testnet mode and use the "Get test SOL" button)
-- Code: _add repository link_
+- Code: https://github.com/stipendme/stipend

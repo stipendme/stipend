@@ -46,4 +46,4 @@ Built with Next.js, the Solana wallet adapter, `@solana/spl-stake-pool`, Jupiter
 First mainnet pools and Sanctum listing, manager key on a Squads multisig, a dedicated Stipend validator, payouts for LP positions, single-transaction launches with Solana's new v1 transactions, and more assets.
 
 **Try it:** https://stipend.my (devnet demo: switch Phantom to Testnet mode and tap "Get test SOL")
-**Code:** _add repository link_
+**Code:** https://github.com/stipendme/stipend
