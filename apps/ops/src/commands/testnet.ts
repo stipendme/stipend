@@ -22,7 +22,7 @@ const TEST_ASSETS: Record<string, { name: string; priceMint: string; decimals: n
   OPENAI: { name: "OpenAI PreStocks", priceMint: "PreweJYECqtQwBtpxHL171nL2K6umo692gTm7Q3rpgF", decimals: 9, hook: true, category: "prestock", transferFeeBps: 300, logo: "https://www.prestocks.com/logos/openai.png?cachebust=1" },
   NVDAx: { name: "NVIDIA xStock", priceMint: "Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh", decimals: 8, hook: true, category: "stock" },
   AAPLx: { name: "Apple xStock", priceMint: "XsbEhLAtcf6HdfpFZ5xEMdqW8nfAvcsP5bdudRLJzJp", decimals: 8, hook: true, category: "stock" },
-  TSLAx: { name: "Tesla xStock", priceMint: "XsDoVfqeBukxuZHWhdvWHBhgnNdZbqqhpqq4vrgN9mv", decimals: 8, hook: true, category: "stock" },
+  TSLAx: { name: "Tesla xStock", priceMint: "XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB", decimals: 8, hook: true, category: "stock" },
   SPYx: { name: "SP500 xStock", priceMint: "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W", decimals: 8, hook: true, category: "etf" },
   GLDx: { name: "Gold xStock", priceMint: "Xsv9hRk1z5ystj9MhnA7Lq4vjSsLwzL2nxrwmwtD3re", decimals: 8, hook: true, category: "metal" },
   cbBTC: { name: "Coinbase Wrapped BTC", priceMint: "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij", decimals: 8, hook: false, category: "crypto" },

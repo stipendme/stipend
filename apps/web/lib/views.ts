@@ -4,6 +4,9 @@ import { computeLstYield, getPrices, getValidatorYield } from "./yield";
 import { openDb, getLstTotals, getSiteAggregates, getRealisedYield, getLatestTvl } from "./db";
 import type { LstsResponse, LstView, SiteTotals } from "./types";
 
+/** Jupiter (mainnet lite-api) prices the real asset. Test networks mirror a mainnet mint via asset.priceMint. */
+const priceMintOf = (a: { mint: string; priceMint?: string }) => a.priceMint ?? a.mint;
+
 let cache: { at: number; value: LstsResponse } | null = null;
 
 export async function buildLstsResponse(): Promise<LstsResponse> {
@@ -11,14 +14,14 @@ export async function buildLstsResponse(): Promise<LstsResponse> {
   const registry = loadRegistry();
   const connection = serverConnection();
   const db = openDb();
-  const [validator, prices] = await Promise.all([getValidatorYield(registry), getPrices(registry.lsts.map((l) => l.asset.mint))]);
+  const [validator, prices] = await Promise.all([getValidatorYield(registry), getPrices(registry.lsts.map((l) => priceMintOf(l.asset)))]);
   const lsts: LstView[] = await Promise.all(
     registry.lsts.map(async (entry) => {
       const totals = db ? (getLstTotals(db, entry.symbol) as (ReturnType<typeof getLstTotals> & { holdersLast?: number | null }) | null) : null;
       return {
         entry,
         stats: entry.status === "draft" ? null : await getPoolStats(connection, entry, totals?.holdersLast ?? null),
-        yield: computeLstYield(validator, registry.fees.platformFeeBps, prices[entry.asset.mint] ?? null, db ? getRealisedYield(db, entry.symbol, entry.asset.decimals) : null),
+        yield: computeLstYield(validator, registry.fees.platformFeeBps, prices[priceMintOf(entry.asset)] ?? null, db ? getRealisedYield(db, entry.symbol, entry.asset.decimals) : null),
         totals: totals ? { epochsRun: totals.epochsRun, totalDistributed: totals.totalDistributed, totalRedeemedLamports: totals.totalRedeemedLamports, lastEpoch: totals.lastEpoch } : null,
       };
     }),
@@ -30,7 +33,7 @@ export async function buildLstsResponse(): Promise<LstsResponse> {
   let anyPaid = false;
   for (const l of lsts) {
     const units = agg.paidByLst[l.entry.symbol];
-    const price = prices[l.entry.asset.mint];
+    const price = prices[priceMintOf(l.entry.asset)];
     if (units && price) {
       paidOutUsd += (Number(BigInt(units)) / 10 ** l.entry.asset.decimals) * price;
       anyPaid = true;

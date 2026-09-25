@@ -3,7 +3,13 @@
 import sharp from "sharp";
 
 export const SIZE = 512;
-export const BADGE = 176;
+// Wallets and explorers crop token images to a circle of radius SIZE/2. The badge must sit wholly inside that circle
+// and be large enough that the LST reads as "Solana + asset", not as the asset itself.
+export const BADGE = 236; // ~46% of the diameter
+const INSET = 8; // gap between the badge edge and the crop circle
+// badge centre along the 45° diagonal so that (distance from centre + badge radius) = SIZE/2 - INSET
+const BADGE_CENTRE = SIZE / 2 + (SIZE / 2 - INSET - BADGE / 2) / Math.SQRT2;
+export const BADGE_OFFSET = Math.round(BADGE_CENTRE - BADGE / 2);
 
 /** Fetch the asset's raw logo bytes: registry logo, else Jupiter tokens v2 `icon` by mint, with IPFS gateway fallbacks. */
 export async function fetchIcon(asset) {
@@ -37,12 +43,13 @@ export async function fetchIcon(asset) {
 
 export const badgeSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="${BADGE}" height="${BADGE}" viewBox="0 0 100 100">
   <defs><linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#9945FF"/><stop offset="1" stop-color="#14F195"/></linearGradient></defs>
-  <circle cx="50" cy="50" r="50" fill="#F5F7F4"/>
-  <circle cx="50" cy="50" r="43" fill="url(#g)"/>
-  <g fill="#fff" transform="translate(50 50) skewX(-22) translate(-50 -50)">
-    <rect x="30" y="31" width="40" height="9" rx="1.5"/>
-    <rect x="30" y="45.5" width="40" height="9" rx="1.5"/>
-    <rect x="30" y="60" width="40" height="9" rx="1.5"/>
+  <circle cx="50" cy="50" r="50" fill="#101815"/>
+  <circle cx="50" cy="50" r="47.5" fill="#FFFFFF"/>
+  <circle cx="50" cy="50" r="42" fill="#101815"/>
+  <g fill="url(#g)">
+    <path d="M32 29 H74 L66 38 H24 Z"/>
+    <path d="M24 45.5 H66 L74 54.5 H32 Z"/>
+    <path d="M32 62 H74 L66 71 H24 Z"/>
   </g>
 </svg>`;
 
@@ -54,7 +61,7 @@ export async function composeMark(raw) {
   const assetPng = await sharp(raw).resize(SIZE, SIZE, { fit: "cover" }).png().toBuffer();
   const disc = await sharp(assetPng).composite([{ input: circleMask(), blend: "dest-in" }]).png().toBuffer();
   const badge = await sharp(Buffer.from(badgeSvg)).png().toBuffer();
-  const off = SIZE - BADGE + 8;
+  const off = BADGE_OFFSET;
   const png = await sharp({ create: { width: SIZE, height: SIZE, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
     .composite([{ input: disc, left: 0, top: 0 }, { input: badge, left: off, top: off }])
     .png()
@@ -78,7 +85,9 @@ const colorFor = (s) => {
 export async function fallbackMark(symbol) {
   const letters = symbol.replace(/sol$/i, "").slice(0, 2).toUpperCase();
   const font = "IBM Plex Sans, DejaVu Sans, Liberation Sans, sans-serif";
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${SIZE}" height="${SIZE}" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="${colorFor(symbol)}"/><rect x="4" y="21" width="24" height="2" fill="rgba(255,255,255,0.35)"/><text x="16" y="17" text-anchor="middle" font-family="${font}" font-weight="600" font-size="12" fill="#fff">${letters}</text><text x="16" y="28" text-anchor="middle" font-family="${font}" font-size="3.6" fill="rgba(255,255,255,0.85)">${symbol}</text></svg>\n`;
-  const png = await sharp(Buffer.from(svg)).resize(SIZE, SIZE).png().toBuffer();
+  // letters sit up and left of centre so the badge (bottom-right) never covers them
+  const tile = `<svg xmlns="http://www.w3.org/2000/svg" width="${SIZE}" height="${SIZE}" viewBox="0 0 32 32"><rect width="32" height="32" fill="${colorFor(symbol)}"/><text x="12.5" y="16.5" text-anchor="middle" font-family="${font}" font-weight="600" font-size="10" fill="#fff">${letters}</text></svg>`;
+  const raw = await sharp(Buffer.from(tile)).resize(SIZE, SIZE).png().toBuffer();
+  const { png, svg } = await composeMark(raw);
   return { png, svg };
 }
