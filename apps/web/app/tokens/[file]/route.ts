@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { MARK_VERSION } from "@/lib/mark-version";
 import path from "node:path";
 import { findRepoRoot } from "@stipend/core";
 import { loadRegistry, findLst } from "@/lib/registry";
@@ -14,7 +15,7 @@ export const dynamic = "force-dynamic";
  * hour only so a logo that appears later still gets picked up.
  */
 const PREBUILT = path.join(process.cwd(), "tokens-prebuilt");
-const cacheDir = () => process.env.TOKEN_CACHE_DIR?.trim() || path.join(findRepoRoot(), "data", "tokens");
+const cacheDir = () => path.join(process.env.TOKEN_CACHE_DIR?.trim() || path.join(findRepoRoot(), "data", "tokens"), `v${MARK_VERSION}`);
 const TYPES: Record<string, string> = { png: "image/png", svg: "image/svg+xml" };
 
 type Built = { png: Buffer; svg: string; cached: boolean };

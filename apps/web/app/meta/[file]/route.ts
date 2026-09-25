@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { MARK_VERSION } from "@/lib/mark-version";
 import { loadRegistry, findLst } from "@/lib/registry";
 
 export const dynamic = "force-dynamic";
@@ -18,9 +19,9 @@ export async function GET(_req: Request, ctx: { params: Promise<{ file: string }
       name: lst.name,
       symbol: lst.symbol,
       description: `${lst.symbol} is a Stipend liquid staking token. It stays 1:1 with SOL; its staking yield is paid to holders in ${lst.asset.symbol} (${lst.asset.name}) every epoch.`,
-      image: `${origin}/tokens/${lst.symbol}.png`,
+      image: `${origin}/tokens/${lst.symbol}.png?v=${MARK_VERSION}`,
       external_url: `https://${registry.brand.domain}/lst/${lst.symbol}`,
-      properties: { files: [{ uri: `${origin}/tokens/${lst.symbol}.png`, type: "image/png" }, { uri: `${origin}/tokens/${lst.symbol}.svg`, type: "image/svg+xml" }], category: "image" },
+      properties: { files: [{ uri: `${origin}/tokens/${lst.symbol}.png?v=${MARK_VERSION}`, type: "image/png" }, { uri: `${origin}/tokens/${lst.symbol}.svg?v=${MARK_VERSION}`, type: "image/svg+xml" }], category: "image" },
       attributes: [
         { trait_type: "pays", value: lst.asset.symbol },
         { trait_type: "validator", value: registry.validator.name },
